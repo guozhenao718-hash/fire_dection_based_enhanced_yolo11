@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📜 历史记录 - 火灾预警系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-brand">🔥 火灾预警智能监控系统</div>
+    <div class="nav-links">
+        <a href="index.html">📊 实时监控</a>
+        <a href="history.html" class="active">📜 历史记录</a>
+    </div>
+    <div class="nav-time" id="currentTime"></div>
+</nav>
+
+<div class="container history-container">
+    <div class="history-card">
+        <h2>📜 检测历史记录</h2>
+        <div id="historyList" class="history-list">
+            <p class="empty-msg">暂无历史记录</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>⚠️ 本系统仅供演示学习，实际火灾请立即拨打 <strong>119</strong></p>
+</footer>
+
+<script src="js/history.js"></script>
+</body>
+</html>

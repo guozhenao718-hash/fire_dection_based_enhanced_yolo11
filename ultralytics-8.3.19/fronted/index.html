@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 火灾预警智能监控大屏</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<nav class="navbar">
+    <div class="nav-brand">🔥 火灾预警智能监控系统</div>
+    <div class="nav-links">
+        <a href="index.html" class="active">📊 实时监控</a>
+        <a href="history.html">📜 历史记录</a>
+    </div>
+    <div class="nav-time" id="currentTime"></div>
+</nav>
+
+<!-- ==================== 主容器 ==================== -->
+<div class="container">
+
+    <!-- 左侧：上传+预览 -->
+    <div class="left-panel">
+        <!-- 上传区域 -->
+        <div class="upload-card">
+            <h2>📤 上传监控图片</h2>
+            <div class="upload-box" id="uploadBox">
+                <div class="upload-icon">📸</div>
+                <p>点击或拖拽上传</p>
+                <p class="hint">支持 JPG / PNG 格式</p>
+                <input type="file" id="fileInput" accept="image/*" hidden>
+            </div>
+        </div>
+
+        <!-- 图片预览 -->
+        <div class="preview-card" id="previewCard" style="display:none;">
+            <h2>📸 实时预览</h2>
+            <div class="image-container">
+                <img id="previewImage" src="" alt="预览图">
+                <canvas id="overlayCanvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右侧：分析结果+数据看板 -->
+    <div class="right-panel">
+        <!-- AI分析结果 -->
+        <div class="result-card">
+            <h2>🤖 AI 智能分析</h2>
+            <div id="resultBox" class="result-box">
+                <p class="loading">等待上传图片...</p>
+            </div>
+        </div>
+
+        <!-- ECharts数据看板 -->
+        <div class="chart-card">
+            <h2>📊 实时数据看板</h2>
+            <div id="riskChart" style="width:100%;height:250px;"></div>
+            <div id="statsRow" class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-value" id="statFire">0</div>
+                    <div class="stat-label">🔥 火焰数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="statSmoke">0</div>
+                    <div class="stat-label">💨 烟雾数</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="statRisk">-</div>
+                    <div class="stat-label">⚠️ 风险等级</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<footer class="footer">
+    <p>⚠️ 本系统仅供演示学习，实际火灾请立即拨打 <strong>119</strong></p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
